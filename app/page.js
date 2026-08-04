@@ -1,9 +1,19 @@
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import StatGiziIndonesia from "@/components/StatGiziIndonesia";
+import AboutSection from "@/components/AboutSection";
+import KonsultasiCards from "@/components/KonsultasiCards";
+import Footer from "@/components/Footer";
+
 export default function Home() {
   return (
     <main>
-      <h1 className="text-3xl font-bold text-center mt-20">
-        Gizi_RSCaruban 🚧 Under Construction
-      </h1>
+      <Navbar />
+      <HeroSection />
+      <StatGiziIndonesia />
+      <AboutSection />
+      <KonsultasiCards />
+      <Footer />
     </main>
   );
 }
