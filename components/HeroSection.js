@@ -19,10 +19,13 @@ export default function HeroSection() {
           </p>
           
           <a
-            href="tel:085648500249"
+            href="https://wa.me/6282313737897"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
           >
-            Telepon: 085648500249
+        
+          WhatsApp: 081-2313-7378-97
           </a>
         </div>
 

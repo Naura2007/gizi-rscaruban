@@ -2,7 +2,7 @@ import WaveDivider from "./WaveDivider";
 
 export default function AboutSection() {
   return (
-    <section className="relative bg-primary text-white overflow-hidden">
+    <section id="about" className="relative bg-primary text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-16 py-20 grid md:grid-cols-2 items-center gap-12">
         {/* Foto kiri */}
         <div className="relative">
@@ -39,10 +39,13 @@ export default function AboutSection() {
           </p>
           
             <a
-            href="tel:085648500249"
-            className="inline-block bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
-          >
-            Telepon: 085648500249
+            href="https://wa.me/6282313737897"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+      >
+          WhatsApp: 081-2313-7378-97
+           
           </a>
         </div>
       </div>
