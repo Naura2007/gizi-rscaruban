@@ -1,7 +1,7 @@
 export default function KonsultasiCards() {
   const cards = [
     {
-      title: "Cek Kesehatan Gizi",
+      title: "Cek Status Gizi",
       desc: "Ketahui status gizi Anda dengan cepat dan akurat berdasarkan data resmi.",
       href: "/cek-status-gizi",
       image: "/images/card-cek-gizi.jpg",

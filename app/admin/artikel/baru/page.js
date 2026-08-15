@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import AdminGuard from "@/components/AdminGuard";
+import AdminLayout from "@/components/AdminLayout";
 
 function buatSlug(title) {
   return title

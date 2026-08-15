@@ -6,34 +6,64 @@ const xlsx = require("xlsx");
 const fs = require("fs");
 const path = require("path");
 
-function convert(inputFile, outputFile) {
-  const filePath = path.join(__dirname, "..", "data", "who-raw", inputFile);
-  const workbook = xlsx.readFile(filePath);
+function ambilNilai(row, kemungkinanNama) {
+  for (const nama of kemungkinanNama) {
+    if (row[nama] !== undefined) return row[nama];
+  }
+  return undefined;
+}
 
-  // Ambil sheet pertama di file Excel itu
+function convert(inputFile, outputFile) {
+  console.log(`\n--- Memproses ${inputFile} ---`);
+
+  const filePath = path.join(__dirname, "..", "data", "who-raw", inputFile);
+  console.log("Membaca file dari:", filePath);
+
+  const workbook = xlsx.readFile(filePath);
+  console.log("Nama sheet ditemukan:", workbook.SheetNames);
+
   const sheetName = workbook.SheetNames[0];
   const sheet = workbook.Sheets[sheetName];
-
-  // Ubah jadi array of objects, contoh: [{ Month: 0, L: ..., M: ..., S: ... }, ...]
   const rows = xlsx.utils.sheet_to_json(sheet);
+  console.log("Jumlah baris terbaca:", rows.length);
 
-  // Kita rapikan biar formatnya konsisten & cuma nyimpen kolom yang kita perlu
+  if (rows.length > 0) {
+    console.log("Contoh baris pertama (mentah):", rows[0]);
+  }
+
   const cleaned = rows.map((row) => ({
-    month: row.Month ?? row.month,
-    L: row.L,
-    M: row.M,
-    S: row.S,
+    month: ambilNilai(row, ["Month", "month", "Age", "age"]),
+    L: ambilNilai(row, ["L", "l"]),
+    M: ambilNilai(row, ["M", "m"]),
+    S: ambilNilai(row, ["S", "s"]),
   }));
 
   const outputPath = path.join(__dirname, "..", "lib", "who-data", outputFile);
-
-  // Pastikan folder tujuan ada
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-
   fs.writeFileSync(outputPath, JSON.stringify(cleaned, null, 2));
 
-  console.log(`✅ Berhasil: ${inputFile} -> lib/who-data/${outputFile} (${cleaned.length} baris)`);
+  console.log(`✅ Berhasil ditulis ke lib/who-data/${outputFile}`);
 }
 
-convert("wfa-girls.xlsx", "wfa-girls.json");
-convert("wfa-boys.xlsx", "wfa-boys.json");
+function jalankanSemua() {
+  const daftarFile = [
+    ["wfa-girls.xlsx", "wfa-girls.json"],
+    ["wfa-boys.xlsx", "wfa-boys.json"],
+    ["bmifa-girls.xlsx", "bmifa-girls.json"],
+    ["bmifa-boys.xlsx", "bmifa-boys.json"],
+  ];
+
+  for (const [input, output] of daftarFile) {
+    try {
+      convert(input, output);
+    } catch (err) {
+      console.log(`❌ GAGAL memproses ${input}`);
+      console.log("Pesan error:", err.message);
+      console.log("Detail lengkap:", err);
+    }
+  }
+
+  console.log("\n=== Semua proses selesai ===");
+}
+
+jalankanSemua();

@@ -2,7 +2,7 @@ import WaveDivider from "./WaveDivider";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative bg-primary text-white overflow-hidden">
+    <section id="about" className="relative bg-primary text-white overflow-hidden scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 md:px-16 py-20 grid md:grid-cols-2 items-center gap-12">
         {/* Foto kiri */}
         <div className="relative">
