@@ -24,7 +24,7 @@ export default function KonsultasiCards() {
     <section className="bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-16 py-16">
         <p className="text-accent font-bold tracking-widest text-lg uppercase text-center mb-3">
-          How We Can Help You
+          Layanan Konsultasi Gizi
         </p>
         <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-4">
           Konsultasikan Kebutuhan Gizi Anda Kepada Kami

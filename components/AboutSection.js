@@ -43,7 +43,7 @@ export default function AboutSection() {
         rel="noopener noreferrer"
         className="inline-block bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
       >
-          WhatsApp: 081-2313-7378-97
+          WhatsApp: 0812313737897
            
           </a>
         </div>

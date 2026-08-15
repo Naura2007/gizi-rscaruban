@@ -12,20 +12,18 @@ export default function Footer() {
 
         {/* Kolom 2: Main Site */}
         <div>
-          <p className="font-semibold mb-4">Main Site</p>
+          <p className="font-semibold mb-4">Halaman Utama</p>
             <ul className="space-y-2 text-white/70 text-sm">
               <li><a href="/" className="hover:text-accent">Home</a></li>
-              <li><a href="/cek-status-gizi" className="hover:text-accent">Cek Status Gizi</a></li>
-              <li><a href="/artikel" className="hover:text-accent">Artikel</a></li>
-              <li><a href="/#about" className="hover:text-accent">About Us</a></li>
+              <li><a href="/#about" className="hover:text-accent">Tentang Kami</a></li>
               <li>
                 <a  
-                href="https://wa.me/6281231337897"
+                href="https://wa.me/0812313737897"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent"
               >
-                Contact
+                Konsultasi Gizi
               </a>
             </li>
           </ul>
@@ -33,18 +31,18 @@ export default function Footer() {
           
         {/* Kolom 3: Office Hours */}
         <div>
-          <p className="font-semibold mb-4">Office Hours</p>
-          <p className="text-white/70 text-sm mb-1">Mon – Fri: 8:00 am – 3:00 pm</p>
-          <p className="text-white/70 text-sm">Sat–Sun: Closed</p>
+          <p className="font-semibold mb-4">Jam Kerja</p>
+          <p className="text-white/70 text-sm mb-1">Senin – Jum'at: 8:00 – 15:00 WIB</p>
+          <p className="text-white/70 text-sm">Sabtu – Minggu: Tutup</p>
         </div>
 
         {/* Kolom 4: Contact Info */}
         <div>
-          <p className="font-semibold mb-4">Contact Info</p>
+          <p className="font-semibold mb-4">Informasi Kontak</p>
           <ul className="space-y-2 text-white/70 text-sm">
             <li>Jl. Ahmad Yani No. KM 2</li>
             <li>instalasigizirsudcaruban@gmail.com</li>
-            <li>081-2313-7378-97</li>
+            <li>0812313737897</li>
           </ul>
         </div>
       </div>

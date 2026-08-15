@@ -1,8 +1,8 @@
 export default function StatGiziIndonesia() {
   const stats = [
     { label: "Stunting", value: "19,8", icon: "" },
-    { label: "Underweight", value: "16,8", icon: "" },
-    { label: "Wasting", value: "7,7", icon: "" },
+    { label: "Gizi Buruk", value: "16,8", icon: "" },
+    { label: "Gizi Lebih", value: "7,7", icon: "" },
     { label: "Obesitas", value: "37,8", icon: "" },
   ];
 
