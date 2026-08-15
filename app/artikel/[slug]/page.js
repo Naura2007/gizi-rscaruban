@@ -6,8 +6,9 @@ import { notFound } from "next/navigation";
 async function getArtikelBySlug(slug) {
   const { data, error } = await supabase
     .from("articles")
-    .select("id, title, content, cover_image_url, created_at")
+    .select("id, title, content, cover_image_url, created_at, status")
     .eq("slug", slug)
+    .eq("status", "published")
     .single();
 
   if (error || !data) {
@@ -62,9 +63,10 @@ export default async function DetailArtikelPage({ params }) {
           </div>
         )}
 
-        <div className="text-gray-700 leading-relaxed whitespace-pre-line">
-          {artikel.content}
-        </div>
+        <div
+          className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700"
+          dangerouslySetInnerHTML={{ __html: artikel.content }}
+        />
       </article>
 
       <Footer />

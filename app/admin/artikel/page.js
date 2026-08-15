@@ -21,7 +21,7 @@ function DaftarArtikelAdmin() {
     setLoading(true);
     const { data, error } = await supabase
       .from("articles")
-      .select("id, title, slug, created_at")
+      .select("id, title, slug, created_at, status")
       .order("created_at", { ascending: false });
 
     if (!error) {
@@ -68,12 +68,6 @@ function DaftarArtikelAdmin() {
         </div>
       ) : artikelList.length === 0 ? (
         <div className="bg-white rounded-2xl border border-gray-100 p-12 text-center">
-          <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-              <path d="M14 2v6h6" strokeLinecap="round" />
-            </svg>
-          </div>
           <p className="text-gray-500 mb-1">Belum ada artikel</p>
           <p className="text-gray-400 text-sm">Klik "Tambah Artikel Baru" untuk mulai menulis.</p>
         </div>
@@ -91,7 +85,18 @@ function DaftarArtikelAdmin() {
                   {artikel.title.charAt(0).toUpperCase()}
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">{artikel.title}</p>
+                  <div className="flex items-center gap-2">
+                    <p className="font-semibold text-gray-900">{artikel.title}</p>
+                    <span
+                      className={`text-xs font-bold px-2 py-0.5 rounded-full ${
+                        artikel.status === "published"
+                          ? "bg-primary/10 text-primary"
+                          : "bg-gray-100 text-gray-500"
+                      }`}
+                    >
+                      {artikel.status === "published" ? "Terbit" : "Draft"}
+                    </span>
+                  </div>
                   <p className="text-xs text-gray-400">{formatTanggal(artikel.created_at)}</p>
                 </div>
               </div>
