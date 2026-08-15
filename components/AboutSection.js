@@ -22,7 +22,6 @@ export default function AboutSection() {
         {/* Teks kanan */}
         <div>
           <p className="text-accent font-semibold tracking-wide mb-2">
-            Modern Design
           </p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             About Gizi_RSCaruban
