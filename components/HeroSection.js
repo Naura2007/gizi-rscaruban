@@ -19,13 +19,13 @@ export default function HeroSection() {
           </p>
           
           <a
-            href="https://wa.me/0812313737897"
+            href="https://wa.me/6282313737897"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
           >
         
-          WhatsApp : 0812313737897
+          WhatsApp : 0823-1373-7897
 
           </a>
         </div>

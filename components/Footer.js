@@ -18,7 +18,7 @@ export default function Footer() {
               <li><a href="/#about" className="hover:text-accent">Tentang Kami</a></li>
               <li>
                 <a  
-                href="https://wa.me/0812313737897"
+                href="https://wa.me/6282313737897"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent"
@@ -42,7 +42,7 @@ export default function Footer() {
           <ul className="space-y-2 text-white/70 text-sm">
             <li>Jl. Ahmad Yani No. KM 2</li>
             <li>instalasigizirsudcaruban@gmail.com</li>
-            <li>0812313737897</li>
+            <li>0823-1373-7897</li>
           </ul>
         </div>
       </div>
