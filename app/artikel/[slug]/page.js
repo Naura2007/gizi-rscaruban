@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import { supabase } from "@/lib/supabase";
 import { notFound } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 async function getArtikelBySlug(slug) {
   const { data, error } = await supabase
     .from("articles")
